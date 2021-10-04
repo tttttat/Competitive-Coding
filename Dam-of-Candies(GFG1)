@@ -1,0 +1,24 @@
+class Solution{
+    
+    public:
+    int maxCandy(int height[], int n) 
+    { 
+       if(n<3) return 0;
+       int l = 0;
+       int r = n-1;
+       int ans = INT_MIN;
+       int temp;
+       while(l<r)
+       {
+           temp = min(height[l],height[r]);
+           temp *= (r-l-1);
+           
+           if(ans<temp) ans = temp;
+           
+           if(height[l]<height[r]) l++;
+           else r--;
+           
+       }
+       return ans;
+    }   
+};
