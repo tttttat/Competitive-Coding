@@ -1,0 +1,32 @@
+class Case:
+    def __init__(self,bought, limit_per_day, yogurt_expiration):
+        self.bought = bought
+        self.limit_per_day = limit_per_day
+        self.yogurt_expiration = sorted(yogurt_expiration)
+        self.consumed = 0
+
+    def consume(selfself):
+        day = 0
+        consumed_today = 0
+        for i in range(self.bought):
+            #Lucy has Consumedd Her Limit for the day -
+            # "Go forward " one day
+            if consumed_today == self.limit_per_day:
+                day += 1
+                consumed_today = 0
+            # Lucy can only consume yogurts that expire
+            # after Today ("day")
+            if self.yogurt_expiration[i] > day:
+                consumed_today += 1
+                self.consumed += 1
+            return self.consumed
+
+t = int(input())
+for i in range(1,t+1):
+    bought, limit_per_day = [int(j) for j in input().split()]
+    yogurt_expiration = [int(k) for k in input().split()]
+    case = Case(bought, limit_per_day, yogurt_expiration)
+    print("Case #{}: {}".format(i, case.consume()))
+
+
+//Tanmay Kumar
