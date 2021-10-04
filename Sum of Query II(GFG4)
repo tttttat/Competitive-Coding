@@ -1,0 +1,24 @@
+
+class Solution{
+public:
+    vector<int> querySum(int n, int arr[], int q, int queries[])
+    {
+        vector<int> x;
+        for(int i=0;i<2*q;i+=2)
+        {
+            int left = queries[i];
+            int right = queries[i+1];
+            int rangesum = 0;
+          for(int i=left-1;i<right;i++)
+          {
+              rangesum += arr[i];
+              
+          }
+          x.push_back(rangesum);
+            
+        }
+        
+       
+        return x;
+    }
+};
