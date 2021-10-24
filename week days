@@ -1,0 +1,22 @@
+#include<stdio.h>
+void weekday(char a[7][10],int x)
+{
+    if(x>7 || x<1)
+    {
+        printf("Invalid ");
+    }
+    else
+    {
+        printf("%s",a[x-1]);
+    }
+}
+
+int main ()
+{
+    char a[7][10]={"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
+    int i;
+    printf("Enter week day");
+    scanf("%d",&i);
+    weekday (a,i);
+    return 0;
+}
